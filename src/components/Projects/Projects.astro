@@ -1,0 +1,97 @@
+---
+import WordpressIcon from "../Icons/WordpressIcon.astro";
+import MysqlIcon from "../Icons/mysqlIcon.astro";
+import ReactIcon from "../Icons/ReactIcon.astro";
+import NodeIcon from "../Icons/NodeIcon.astro"
+
+import CardProject from "./CardProject.astro";
+
+const TAGS = {
+  WORDPRESS: {
+    name: "Wordpress",
+    class: "bg-white text-black",
+    icon: WordpressIcon,
+  },
+  REACT: {
+    name: "React.js",
+    class: "bg-white text-black",
+    icon: ReactIcon
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-white text-black",
+    icon: MysqlIcon
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-white text-black",
+    icon: NodeIcon
+  }
+};
+
+const projects = [
+  {
+    title: "Grainsys",
+    description:
+      "Landing Page hecho con Wordpress y el constructor Elementor.",
+    tags: [TAGS.WORDPRESS],
+    srcImage: "/projects/grainsys.png",
+    href:"https://grainsys.net/"
+  },
+  {
+    title: "Scala Pedidos",
+    description:
+      "Aplicación en fase beta de Pedidos realizado con React.js, Node.js y MySQL.",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.MYSQL],
+    srcImage: "/projects/scala_pedido.png",
+    href: "https://scala-pedido-frontend-k1n179tsr-devadev.vercel.app/"
+  },
+  {
+    title: "Grainsys",
+    description:
+      "Landing Page para una Empresa que mejora el rendimiento de Arroz.",
+    tags: [TAGS.WORDPRESS],
+    srcImage: "/projects/grainsys.png",
+    href:""
+  },
+];
+---
+
+<section id="projects" class="px-4 md:px-0 pb-20 pt-10">
+  <h2
+    class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80 mt-10"
+  >
+    <svg
+      class="size-7"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
+        d="M14 4l-4 16"></path></svg
+    >
+     Proyectos
+  </h2>
+  <ul class="grid md:flex gap-9">
+    {
+      projects.map((p) => (
+        <li>
+          <CardProject {...p} />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  section {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+</style>
