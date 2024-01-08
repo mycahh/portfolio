@@ -1,9 +1,29 @@
 ---
+const { lang } = Astro.props;
 ---
-<footer class="rounded-lg shadow bg-black/5 dark:bg-black/20 backdrop-blur-lg mx-auto">
+
+<footer
+  class="rounded-lg shadow bg-black/5 dark:bg-black/20 backdrop-blur-lg mx-auto"
+>
   <div class="w-full xl:w-[1120px] mx-auto py-5">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"> <span class="text-sm sm:text-center text-yellow-800/90 dark:text-yellow-200/90">
-      Built with Astro.js and Tailwind CSS by Mikael Fernandez
-</span> <ul class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"> <li> <a href="#about" class="hover:underline me-4 md:me-6">Sobre mí</a> </li> <li></ul> </div>
-  </div>  
+    <div
+      class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+    >
+      <span
+        class="text-sm sm:text-center text-yellow-800/90 dark:text-yellow-200/90"
+      >
+        Built with Astro.js and Tailwind CSS by Mikael Fernandez
+      </span>
+      <ul
+        class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
+      >
+        <li>
+          <a href="#about" class="hover:underline me-4 md:me-6"
+            >{lang === "en" ? "About me" : "Sobre mí"}</a
+          >
+        </li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
 </footer>

@@ -1,14 +1,19 @@
 ---
+  const { lang } = Astro.props
 
+  const navigation_en = { Experience: "Experience", Proyects: "Proyects", About: "About me" } 
+  const navigation_es = { Experience: "Experiencia", Proyects: "Proyectos", About: "Sobre mí" } 
+
+  const navigation = lang === "en" ? navigation_en : navigation_es
 ---
 
 <header class="flex items-center h-10 backdrop-blur-2xl w-full">
   <nav class="flex justify-between w-full px-4">
     <p class="hidden md:block">@953.13</p>
     <ol>
-      <a class="hover:bg-white/10 rounded-full px-3 transition py-1" href="#experience">Experiencia</a>
-      <a class="hover:bg-white/10 rounded-full px-3 transition py-1" href="#projects">Proyectos</a>
-      <a class="hover:bg-white/10 rounded-full px-3 py-1 transition" href="#about">Sobre mí</a>
+      <a class="hover:bg-white/10 rounded-full px-3 transition py-1" href="#experience">{navigation.Experience}</a>
+      <a class="hover:bg-white/10 rounded-full px-3 transition py-1" href="#projects">{navigation.Proyects}</a>
+      <a class="hover:bg-white/10 rounded-full px-3 py-1 transition" href="#about">{navigation.About}</a>
     </ol>
   </nav>
 </header>

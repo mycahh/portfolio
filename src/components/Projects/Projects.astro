@@ -29,7 +29,7 @@ const TAGS = {
   }
 };
 
-const projects = [
+const proyects_es = [
   {
     title: "Grainsys",
     description:
@@ -55,6 +55,37 @@ const projects = [
     href:""
   },
 ];
+
+const proyects_en = [
+  {
+    title: "Grainsys",
+    description:
+      "Landing Page made with Wordpress and the Elementor builder.",
+    tags: [TAGS.WORDPRESS],
+    srcImage: "/portfolio/projects/grainsys.png",
+    href:"https://grainsys.net/"
+  },
+  {
+    title: "Scala Pedidos",
+    description:
+      "Web application in beta phase of Ordering made with React.js, Node.js and MySQL.",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.MYSQL],
+    srcImage: "/portfolio/projects/scala_pedido.png",
+    href: "https://scala-pedido-frontend-k1n179tsr-devadev.vercel.app/"
+  },
+  {
+    title: "Grainsys",
+    description:
+      "Landing Page made with Wordpress and the Elementor builder.",
+    tags: [TAGS.WORDPRESS],
+    srcImage: "/portfolio/projects/grainsys.png",
+    href:""
+  },
+];
+
+const projects = Astro.props.lang === "en" ? proyects_en : proyects_es
+
+const title = Astro.props.lang === "en" ? "Proyects" : "Projectos"
 ---
 
 <section id="projects" class="px-4 md:px-0 pb-20 pt-10">
@@ -76,7 +107,7 @@ const projects = [
         d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
         d="M14 4l-4 16"></path></svg
     >
-     Proyectos
+     {title}
   </h2>
   <ul class="grid md:flex gap-9">
     {
