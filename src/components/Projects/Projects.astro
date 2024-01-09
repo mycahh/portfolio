@@ -2,7 +2,7 @@
 import WordpressIcon from "../Icons/WordpressIcon.astro";
 import MysqlIcon from "../Icons/mysqlIcon.astro";
 import ReactIcon from "../Icons/ReactIcon.astro";
-import NodeIcon from "../Icons/NodeIcon.astro"
+import NodeIcon from "../Icons/NodeIcon.astro";
 
 import CardProject from "./CardProject.astro";
 
@@ -15,36 +15,35 @@ const TAGS = {
   REACT: {
     name: "React.js",
     class: "bg-white text-black",
-    icon: ReactIcon
+    icon: ReactIcon,
   },
   MYSQL: {
     name: "MySQL",
     class: "bg-white text-black",
-    icon: MysqlIcon
+    icon: MysqlIcon,
   },
   NODE: {
     name: "Node.js",
     class: "bg-white text-black",
-    icon: NodeIcon
-  }
+    icon: NodeIcon,
+  },
 };
 
 const proyects_es = [
-  {
-    title: "Grainsys",
-    description:
-      "Landing Page hecho con Wordpress y el constructor Elementor.",
-    tags: [TAGS.WORDPRESS],
-    srcImage: "/portfolio/projects/grainsys.png",
-    href:"https://grainsys.net/"
-  },
   {
     title: "Scala Pedidos",
     description:
       "Aplicación en fase beta de Pedidos realizado con React.js, Node.js y MySQL.",
     tags: [TAGS.REACT, TAGS.NODE, TAGS.MYSQL],
     srcImage: "/portfolio/projects/scala_pedido.png",
-    href: "https://scala-pedido-frontend-k1n179tsr-devadev.vercel.app/"
+    href: "https://scala-pedido-frontend-k1n179tsr-devadev.vercel.app/",
+  },
+  {
+    title: "Encriptador",
+    description: "Un simple encriptador y desencriptador de mensajes hecho en Svelte.js",
+    tags: [TAGS.WORDPRESS],
+    srcImage: "/portfolio/projects/encryptor.png",
+    href: "https://encryptor-263nqi5yo-mycahh.vercel.app/",
   },
   {
     title: "Grainsys",
@@ -52,40 +51,38 @@ const proyects_es = [
       "Landing Page para una Empresa que mejora el rendimiento de Arroz.",
     tags: [TAGS.WORDPRESS],
     srcImage: "/portfolio/projects/grainsys.png",
-    href:""
+    href: "",
   },
 ];
 
 const proyects_en = [
-  {
-    title: "Grainsys",
-    description:
-      "Landing Page made with Wordpress and the Elementor builder.",
-    tags: [TAGS.WORDPRESS],
-    srcImage: "/portfolio/projects/grainsys.png",
-    href:"https://grainsys.net/"
-  },
   {
     title: "Scala Pedidos",
     description:
       "Web application in beta phase of Ordering made with React.js, Node.js and MySQL.",
     tags: [TAGS.REACT, TAGS.NODE, TAGS.MYSQL],
     srcImage: "/portfolio/projects/scala_pedido.png",
-    href: "https://scala-pedido-frontend-k1n179tsr-devadev.vercel.app/"
+    href: "https://scala-pedido-frontend-k1n179tsr-devadev.vercel.app/",
+  },
+  {
+    title: "Encriptador",
+    description: "A simple message encryptor and decryptor made in Svelte.js",
+    tags: [TAGS.WORDPRESS],
+    srcImage: "/portfolio/projects/encryptor.png",
+    href: "https://encryptor-263nqi5yo-mycahh.vercel.app/",
   },
   {
     title: "Grainsys",
-    description:
-      "Landing Page made with Wordpress and the Elementor builder.",
+    description: "Landing Page made with Wordpress and the Elementor builder.",
     tags: [TAGS.WORDPRESS],
     srcImage: "/portfolio/projects/grainsys.png",
-    href:""
+    href: "",
   },
 ];
 
-const projects = Astro.props.lang === "en" ? proyects_en : proyects_es
+const projects = Astro.props.lang === "en" ? proyects_en : proyects_es;
 
-const title = Astro.props.lang === "en" ? "Proyects" : "Projectos"
+const title = Astro.props.lang === "en" ? "Proyects" : "Projectos";
 ---
 
 <section id="projects" class="px-4 md:px-0 pb-20 pt-10">
@@ -107,7 +104,7 @@ const title = Astro.props.lang === "en" ? "Proyects" : "Projectos"
         d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
         d="M14 4l-4 16"></path></svg
     >
-     {title}
+    {title}
   </h2>
   <ul class="grid md:flex gap-9">
     {
