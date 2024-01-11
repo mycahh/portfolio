@@ -62,3 +62,36 @@ import Footer from "./Footer.astro";
     }
   }
 </style>
+
+<script>
+  const pathname = "/portfolio"
+  const pathnameSpanish = "/portfolio/es"
+
+  function isLanguageSpanish() {
+    return navigator.language.toLowerCase().startsWith('es')
+  }
+
+  function isSpanishPathname() {
+    return window.location.pathname === pathnameSpanish
+  }
+
+  function isRedirect() {
+    return Boolean(window.localStorage.getItem("redirect")) || false
+  }
+
+  function main() {
+    if(isRedirect()) return
+
+    window.localStorage.setItem("redirect", "true")
+
+    if(!isLanguageSpanish() && isSpanishPathname())
+      window.location.pathname = pathname
+    
+
+    if(isLanguageSpanish() && !isSpanishPathname())
+      window.location.pathname = pathnameSpanish
+  }
+
+  main()
+
+</script>
