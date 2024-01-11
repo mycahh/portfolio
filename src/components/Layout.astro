@@ -72,7 +72,7 @@ import Footer from "./Footer.astro";
   }
 
   function isSpanishPathname() {
-    return window.location.pathname.startsWith(pathnameSpanish)
+    return window.location.pathname.includes(pathnameSpanish)
   }
 
   function wasRedirect() {
