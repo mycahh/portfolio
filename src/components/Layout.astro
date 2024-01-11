@@ -64,7 +64,7 @@ import Footer from "./Footer.astro";
 </style>
 
 <script>
-  const pathname = "/portfolio"
+  const pathname = "/portfolio/"
   const pathnameSpanish = "/portfolio/es/"
 
   function isLanguageSpanish() {
@@ -75,12 +75,12 @@ import Footer from "./Footer.astro";
     return window.location.pathname === pathnameSpanish
   }
 
-  function isRedirect() {
-    return Boolean(window.localStorage.getItem("redirect")) || false
+  function wasRedirect() {
+    return window.localStorage.getItem("redirect") === null
   }
 
   function main() {
-    if(isRedirect()) return
+    if(!wasRedirect()) return
 
     window.localStorage.setItem("redirect", "true")
 
