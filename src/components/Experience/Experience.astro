@@ -64,7 +64,7 @@
         Frontend Developer (Elementor) - Freelancer
       </h3>
       <p class="mb-4 text-base font-normal dark:text-gray-200 text-pretty">{data.description1}</p>
-      <p class="font-extrabold">Lista de Trabajos Participados: </p>
+      <p class="font-extrabold">{lang === "en" ? "Proyects I have worked on: ": "Proyectos en los que he trabajado: "} </p>
       <ul class="ml-6 mt-2 list-work" >
         <li class="">
           <a href="https://doha-tours.com/servicios/" target="_blank" class="underline">Doha Tours</a>
@@ -101,10 +101,10 @@
       </p>
       <ul class="list-work ml-8">
         <li>
-          <a href="https://renofase.com/"  class="line-through" target="_blank" >Renofase</a>. Migrated to Wordpress
+          <a href="https://renofase.com/"  class="line-through" target="_blank" >Renofase</a>. {lang === "en" ? "Migrated to Wordpress":"Migrado a Wordpress"}
         </li>
         <li>
-          <a href="https://creamedicinaprepagada.com/"  class="line-through" target="_blank">Cre@ Salud Landing Page</a>. It doesn't work.
+          <a href="https://creamedicinaprepagada.com/"  class="line-through" target="_blank">Cre@ Salud Landing Page</a>. {lang === "en" ? "Doesn't work" : "Removido"}
         </li>
       </ul>
     </li>
